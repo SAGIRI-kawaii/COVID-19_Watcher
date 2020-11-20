@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hhh-ui-IAd">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="c4z-pq-6Vi">
+            <objects>
+                <navigationController id="Hhh-ui-IAd" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cCQ-vH-kI6">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="K8x-Qf-0rr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ksp-5t-0kS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1543" y="138"/>
+        </scene>
+        <!--中国疫情查询-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="Send" id="BYZ-38-t0r" customClass="ViewController" customModule="COVID_19_Watcher" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hbs-Td-vsQ">
+                                <rect key="frame" x="20" y="288" width="374" height="72"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wvp-6V-j4a">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="POj-vj-byD">
+                                        <rect key="frame" x="0.0" y="42" width="374" height="30"/>
+                                        <state key="normal" title="搜索"/>
+                                        <connections>
+                                            <action selector="searchButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nm7-p9-ku0"/>
+                                            <segue destination="KRo-cm-BnL" kind="show" identifier="searchSegue" id="eYZ-lI-DMo"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hbs-Td-vsQ" secondAttribute="trailing" constant="20" id="ALf-wD-eYW"/>
+                            <constraint firstItem="hbs-Td-vsQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="fOE-uE-McY"/>
+                            <constraint firstItem="hbs-Td-vsQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="w6w-Sy-lw3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="中国疫情查询" id="3Qw-Kv-wWw"/>
+                    <connections>
+                        <outlet property="inputField" destination="wvp-6V-j4a" id="r8T-5d-s7w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-629" y="138"/>
+        </scene>
+        <!--搜索结果-->
+        <scene sceneID="IxZ-gd-ZdU">
+            <objects>
+                <viewController storyboardIdentifier="Receive" id="KRo-cm-BnL" customClass="ResultViewController" customModule="COVID_19_Watcher" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VjX-VS-Y01">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="D2N-WQ-HsH">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="搜索结果" id="MHE-qe-Ih0">
+                                        <barButtonItem key="leftBarButtonItem" title="返回" id="f76-FQ-aSR"/>
+                                        <barButtonItem key="rightBarButtonItem" title="收藏" id="iGT-im-2ES"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YQ2-mb-Qnd">
+                                <rect key="frame" x="100" y="188" width="214" height="142.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="目前确诊：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBo-k0-Itv">
+                                        <rect key="frame" x="0.0" y="0.0" width="214" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="确诊总数：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ggs-3j-eRY">
+                                        <rect key="frame" x="0.0" y="30.5" width="214" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="疑似总数：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYu-P0-J34">
+                                        <rect key="frame" x="0.0" y="61" width="214" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="死亡总数：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZmD-ti-CnU">
+                                        <rect key="frame" x="0.0" y="91.5" width="214" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="治愈总数：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfX-KS-uJC">
+                                        <rect key="frame" x="0.0" y="122" width="214" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="WfX-KS-uJC" firstAttribute="top" secondItem="ZmD-ti-CnU" secondAttribute="bottom" constant="100" id="R1W-7F-dEx"/>
+                                    <constraint firstItem="WfX-KS-uJC" firstAttribute="leading" secondItem="YQ2-mb-Qnd" secondAttribute="leading" constant="20" id="yT1-Ex-N2R"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="YQ2-mb-Qnd" firstAttribute="leading" secondItem="aty-Y6-6Zh" secondAttribute="leading" constant="100" id="B7E-cL-hNQ"/>
+                            <constraint firstItem="YQ2-mb-Qnd" firstAttribute="top" secondItem="aty-Y6-6Zh" secondAttribute="top" constant="100" id="SRY-qf-g4H"/>
+                            <constraint firstItem="aty-Y6-6Zh" firstAttribute="trailing" secondItem="YQ2-mb-Qnd" secondAttribute="trailing" constant="100" id="upf-ej-1LV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aty-Y6-6Zh"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="搜索结果" id="sDS-bK-Ycs"/>
+                    <connections>
+                        <outlet property="confirm" destination="Ggs-3j-eRY" id="Vhx-UX-4hV"/>
+                        <outlet property="dead" destination="ZmD-ti-CnU" id="MlY-2F-uBf"/>
+                        <outlet property="heal" destination="WfX-KS-uJC" id="EUW-Yb-hAJ"/>
+                        <outlet property="nowConfirm" destination="sBo-k0-Itv" id="xGS-7c-H8u"/>
+                        <outlet property="suspect" destination="kYu-P0-J34" id="M2b-WW-yuq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mTC-b4-2cN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="306" y="138"/>
+        </scene>
+    </scenes>
+</document>
